@@ -721,11 +721,6 @@ static int sys_device_create(void)
 	struct class *virtual_proximity = NULL;
 	struct device *virtual_proximity_device = NULL;
 
-		if (status==FT_TOUCH_DOWN)
-			printk("[FTS]Down pid[%d]:[%d,%d]\n",id,x,y);
-		else if (status==1)
-			printk("[FTS]Up pid[%d]:[%d,%d]\n",id,x,y);
-
 		if ( x < data->pdata->panel_maxx && y < data->pdata->panel_maxy ) {
 			input_mt_slot(ip_dev, id);
 			if (status == FT_TOUCH_DOWN || status == FT_TOUCH_CONTACT) {
